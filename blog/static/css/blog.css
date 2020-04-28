@@ -1,7 +1,7 @@
 .page-header {
     background-color: #56BB6E;
     margin-top: 0;
-    padding: 20px 20px 40px 40px;
+    padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -12,7 +12,9 @@
 }
 
 .content {
-    margin-left: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70em
 }
 
 h1, h2, h3, h4 {
