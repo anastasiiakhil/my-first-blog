@@ -1,7 +1,15 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(img.jpg);
+    background-size: cover;
+}
+
+
 .page-header {
     background-color: #56BB6E;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 20px 20px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -9,17 +17,32 @@
     font-size: 40pt;
     text-decoration: none;
     text-align: center;
+    text-shadow: 5px 5px #558ABB;
 }
+
 
 .content {
     margin-left: auto;
     margin-right: auto;
-    width: 70em
+    width: 70em;
 }
+
 
 h1, h2, h3, h4 {
     font-family: 'Lobster', cursive;
 }
+
+
+h3 {
+    color: #ffffff;
+}
+
+
+h5 {
+    color: #ffffff;
+    text-shadow: 5px 5px #558ABB;
+}
+
 
 .date {
     color: #96AA9B;
@@ -37,12 +60,14 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+    font-size: 15pt;
+    margin-right: 15px;
+    text-shadow: 5px 5px #558ABB;
 }
 
 .post {
-    margin-bottom: 70px;
+    margin-bottom: 0px;
+    background-color: white;
 }
 
 .post h1 a, .post h1 a:visited {

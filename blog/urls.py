@@ -2,6 +2,10 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    url(r'^exit/$', views.LogoutView.as_view(), name='exit'),
+    url(r'^register/$', views.RegisterFormView.as_view(), name='register'),
+    url(r'^login/$', views.LoginFormView.as_view(), name='login'),
+
     url(r'^$', views.post_list, name='post_list'),
     url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
     url(r'^post/new/$', views.post_new, name='post_new'),

@@ -8,6 +8,11 @@ from .forms import PostForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth import login, logout
+from django.views.generic.edit import FormView
+from django.views.generic.base import View
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -65,3 +70,30 @@ def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
+
+
+class RegisterFormView(FormView):
+    form_class = UserCreationForm
+    success_url = '/'
+    template_name = 'blog/register.html'
+
+    def form_valid(self, form):
+        form.save()
+        return super(RegisterFormView, self).form_valid(form)
+
+
+class LoginFormView(FormView):
+    form_class = AuthenticationForm
+    template_name = 'blog/login.html'
+    success_url = '/'
+
+    def form_valid(self, form):
+        self.user = form.get_user()
+        login(self.request, self.user)
+        return super(LoginFormView, self).form_valid(form)
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect('/')
