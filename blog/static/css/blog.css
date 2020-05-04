@@ -66,10 +66,16 @@ h5 {
 }
 
 .post {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     background-color: white;
+    padding: 10px;
 }
 
 .post h1 a, .post h1 a:visited {
     color: #56BB6E;
+    padding: 20px;
+}
+
+label {
+    color: #ffffff;
 }
